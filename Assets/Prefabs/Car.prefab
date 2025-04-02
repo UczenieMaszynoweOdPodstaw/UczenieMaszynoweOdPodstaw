@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1189482375855145879}
   - component: {fileID: 7572708430478603770}
   - component: {fileID: 993416329248480118}
+  - component: {fileID: 8113604372826639605}
+  - component: {fileID: 632600421848874718}
   m_Layer: 7
   m_Name: Car
   m_TagString: Untagged
@@ -82,6 +84,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &8113604372826639605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299562882974357020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c77d5ff8740b4247b10406efab5aae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelerationForce: 20
+  maxSpeed: 50
+  turnForce: 20
+  maxTurnSpeed: 2
+--- !u!114 &632600421848874718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299562882974357020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e94d728199f5943ab0b711ed3b5f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4970125270075250430
 PrefabInstance:
   m_ObjectHideFlags: 0
