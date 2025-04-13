@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    public const int ACTION_COUNT = 4;
     [SerializeField] float accelerationForce;
     [SerializeField] float maxSpeed;
     [SerializeField] float turnForce;
