@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1123979847184673166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SampleTrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 178321397927337989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1119,9 +1119,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1795024184214855179, guid: 1e20f2f2a14f12a4a8c58e49ed898286, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4807730654657389505, guid: 1e20f2f2a14f12a4a8c58e49ed898286, type: 3}
       propertyPath: m_Name
       value: startLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807730654657389505, guid: 1e20f2f2a14f12a4a8c58e49ed898286, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2256886197062606028, guid: 1e20f2f2a14f12a4a8c58e49ed898286, type: 3}
