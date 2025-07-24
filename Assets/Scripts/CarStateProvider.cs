@@ -40,14 +40,6 @@ public class CarStateProvider : MonoBehaviour
         {
             distance = raycastHit.distance;
         }
-        Debug.DrawRay(sensor.position, sensor.forward * distance, Color.green);
         return distance;
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        GetCarState();
     }
 }
