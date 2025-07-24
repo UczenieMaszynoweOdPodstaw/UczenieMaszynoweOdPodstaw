@@ -6,10 +6,13 @@ public class AICar : MonoBehaviour
 {
     CarController carController;
     Action[] actions;
+    NeuralNetwork neuralNetwork;
+    CarStateProvider carStateProvider;
 
     void Awake()
     {
         carController = GetComponent<CarController>();
+        carStateProvider = GetComponent<CarStateProvider>();
         actions = new Action[]
         {
             carController.Accelerate,
@@ -17,6 +20,8 @@ public class AICar : MonoBehaviour
             carController.TurnRight,
             carController.Brake,
         };
+        neuralNetwork = new NeuralNetwork();
+        neuralNetwork.InitRandom();
     }
 
     void FixedUpdate()
@@ -27,6 +32,21 @@ public class AICar : MonoBehaviour
 
     Action GetNextAction()
     {
-        return actions[Random.Range(0, CarController.ACTION_COUNT)];
+        var carStateAsParams = MapCarStateToInputArray(carStateProvider.GetCarState());
+        var neuralNetworkOutput = neuralNetwork.CalculateOutput(carStateAsParams);
+        return actions[neuralNetworkOutput];
+    }
+
+    float[] MapCarStateToInputArray(CarState state)
+    {
+        return new float[]
+        {
+            state.Speed,
+            state.LeftDistance,
+            state.LeftFrontDistance,
+            state.FrontDistance,
+            state.RightFrontDistance,
+            state.RightDistance
+        };
     }
 }
