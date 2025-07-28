@@ -6,10 +6,14 @@ public class AIManager : MonoBehaviour
     [SerializeField] int carsCount;
     [SerializeField] AICar carPrefab;
     List<AICar> aiCars;
+    Generation currentGeneration;
 
     void Awake()
     {
+        var startGeneration = new Generation();
+        startGeneration.InitRandom(carsCount);
         InitAICars();
+        StartNewRun(startGeneration);
     }
 
     void InitAICars()
@@ -19,6 +23,15 @@ public class AIManager : MonoBehaviour
         {
             var car = Instantiate(carPrefab);
             aiCars.Add(car);
+        }
+    }
+
+    void StartNewRun(Generation nextGeneration)
+    {
+        currentGeneration = nextGeneration;
+        for (int i = 0; i < aiCars.Count; i++)
+        {
+            aiCars[i].SteeringModel = currentGeneration.SteeringModels[i];
         }
     }
 

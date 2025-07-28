@@ -4,9 +4,9 @@ using Random = UnityEngine.Random;
 
 public class AICar : MonoBehaviour
 {
+    public SteeringModel SteeringModel { get; set; }
     CarController carController;
     Action[] actions;
-    NeuralNetwork neuralNetwork;
     CarStateProvider carStateProvider;
 
     void Awake()
@@ -20,8 +20,6 @@ public class AICar : MonoBehaviour
             carController.TurnRight,
             carController.Brake,
         };
-        neuralNetwork = new NeuralNetwork();
-        neuralNetwork.InitRandom();
     }
 
     void FixedUpdate()
@@ -33,7 +31,7 @@ public class AICar : MonoBehaviour
     Action GetNextAction()
     {
         var carStateAsParams = MapCarStateToInputArray(carStateProvider.GetCarState());
-        var neuralNetworkOutput = neuralNetwork.CalculateOutput(carStateAsParams);
+        var neuralNetworkOutput = SteeringModel.Network.CalculateOutput(carStateAsParams);
         return actions[neuralNetworkOutput];
     }
 
