@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 632600421848874718}
   - component: {fileID: 4980902597181703379}
   - component: {fileID: 4574705359418956192}
+  - component: {fileID: 5146872943807831395}
   m_Layer: 7
   m_Name: Car
   m_TagString: Untagged
@@ -144,6 +145,18 @@ MonoBehaviour:
   frontSensor: {fileID: 4524597538455055348}
   rightFrontSensor: {fileID: 9130665964010413962}
   rightSensor: {fileID: 6150590244369301214}
+--- !u!114 &5146872943807831395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299562882974357020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84dcde669bf23c041920e187aa37f08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2480208451646991563
 GameObject:
   m_ObjectHideFlags: 0
