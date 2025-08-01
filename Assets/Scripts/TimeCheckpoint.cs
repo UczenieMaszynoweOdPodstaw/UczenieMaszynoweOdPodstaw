@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class TimeCheckpoint : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int checkpointNumber;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        var rewardCalculator = other.GetComponent<RewardCalculator>();
+        if (rewardCalculator != null)
+        {
+            rewardCalculator.CheckpointPassed(checkpointNumber);
+        }
     }
 }

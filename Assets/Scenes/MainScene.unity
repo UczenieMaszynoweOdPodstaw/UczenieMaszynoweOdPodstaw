@@ -339,6 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carsCount: 10
   carPrefab: {fileID: 4980902597181703379, guid: 9d75fa512cc5c744f8d624c95d7163f4, type: 3}
+  maxRunTime: 5
 --- !u!4 &1277065714
 Transform:
   m_ObjectHideFlags: 0

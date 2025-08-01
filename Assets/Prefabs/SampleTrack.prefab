@@ -446,6 +446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.72
@@ -507,6 +511,10 @@ PrefabInstance:
     - target: {fileID: 71668285838121075, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_Name
       value: Checkpoint (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1004,6 +1012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50
@@ -1065,6 +1077,10 @@ PrefabInstance:
     - target: {fileID: 71668285838121075, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_Name
       value: Checkpoint (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1251,6 +1267,10 @@ PrefabInstance:
     - target: {fileID: 71668285838121075, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_Name
       value: Checkpoint (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1633,6 +1653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.909996
@@ -1756,6 +1780,10 @@ PrefabInstance:
     - target: {fileID: 71668285838121075, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_Name
       value: Checkpoint (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1943,6 +1971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint
       objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03919506
@@ -2067,6 +2099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30.01
@@ -2128,6 +2164,10 @@ PrefabInstance:
     - target: {fileID: 71668285838121075, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_Name
       value: Checkpoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2625,6 +2665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.03
@@ -2873,6 +2917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.19
@@ -2934,6 +2982,10 @@ PrefabInstance:
     - target: {fileID: 71668285838121075, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_Name
       value: Checkpoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562728190599303216, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
+      propertyPath: checkpointNumber
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8601446768562700318, guid: a97ecec1b3f57e74a9baa0f2cd6b8a91, type: 3}
       propertyPath: m_LocalPosition.x
