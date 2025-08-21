@@ -6,6 +6,9 @@ using UnityEngine;
 public class GeneticAlgorithm
 {
     const float TOP_PERCENT_SELECTION = 0.5f;
+    const float MIN_MUTATION_STRENGHT = 0.5f;
+    const float MAX_MUTATION_STRENGHT = 1.5f;
+    const float MUTATION_CHANCE = 0.05f;
     public Generation GetNextGeneration(Generation currentGen) //currentGen is already evaluated here!
     {
         var nextGeneration = new Generation();
@@ -23,7 +26,15 @@ public class GeneticAlgorithm
             var children = CreateChildren(parent1, parent2);
             nextGeneration.SteeringModels.AddRange(children);
         }
+
         //mutation
+        foreach (var model in nextGeneration.SteeringModels)
+        {
+            if (Random.value < MUTATION_CHANCE)
+            {
+                MutateModel(model);
+            }
+        }
 
         return nextGeneration;
     }
@@ -83,6 +94,15 @@ public class GeneticAlgorithm
         }
 
         return new List<SteeringModel> { child1, child2 };
+    }
+
+    void MutateModel(SteeringModel model)
+    {
+        var nodes = model.Network.HiddenLayer.Concat(model.Network.OutputLayer).ToArray();
+        var nodeToMutate = nodes[Random.Range(0, nodes.Length)];
+
+        var mutationStrenght = Random.Range(MIN_MUTATION_STRENGHT, MAX_MUTATION_STRENGHT);
+        nodeToMutate.Weights[Random.Range(0, nodeToMutate.Weights.Length)] *= mutationStrenght;
     }
 
     T GetCopy<T>(T obj)
