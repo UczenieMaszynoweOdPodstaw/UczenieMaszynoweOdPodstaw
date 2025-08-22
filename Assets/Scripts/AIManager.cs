@@ -7,11 +7,13 @@ public class AIManager : MonoBehaviour
     [SerializeField] AICar carPrefab;
     [SerializeField] float maxRunTime;
     List<AICar> aiCars;
+    GeneticAlgorithm geneticAlgorithm;
     Generation currentGeneration;
     float runStartTime;
 
     void Awake()
     {
+        geneticAlgorithm = new GeneticAlgorithm();
         var startGeneration = new Generation();
         startGeneration.InitRandom(carsCount);
         InitAICars();
@@ -35,6 +37,7 @@ public class AIManager : MonoBehaviour
         for (int i = 0; i < aiCars.Count; i++)
         {
             aiCars[i].SteeringModel = currentGeneration.SteeringModels[i];
+            aiCars[i].SteeringModel.Reward = 0;
             aiCars[i].GetComponent<RewardCalculator>().RunStartTime = runStartTime;
             ResetCar(aiCars[i]);
         }
@@ -56,9 +59,17 @@ public class AIManager : MonoBehaviour
     {
         if (Time.time > runStartTime + maxRunTime)
         {
-            var startGeneration = new Generation();
-            startGeneration.InitRandom(carsCount);
-            StartNewRun(startGeneration);
+            EvaluateCars();
+            var nextGeneration = geneticAlgorithm.GetNextGeneration(currentGeneration);
+            StartNewRun(nextGeneration);
+        }
+    }
+
+    void EvaluateCars()
+    {
+        foreach (var car in aiCars)
+        {
+            car.SteeringModel.Reward = car.GetComponent<RewardCalculator>().CalculateReward();
         }
     }
 }

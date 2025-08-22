@@ -36,6 +36,9 @@ public class GeneticAlgorithm
             }
         }
 
+        nextGeneration.SteeringModels.Remove(nextGeneration.SteeringModels.Last());
+        nextGeneration.SteeringModels.Add(GetCopy(bestModel));
+
         return nextGeneration;
     }
 
