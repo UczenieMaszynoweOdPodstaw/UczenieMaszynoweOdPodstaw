@@ -6,6 +6,7 @@ public class AIManager : MonoBehaviour
     [SerializeField] int carsCount;
     [SerializeField] AICar carPrefab;
     [SerializeField] float maxRunTime;
+    [SerializeField] float timeScale;
     List<AICar> aiCars;
     GeneticAlgorithm geneticAlgorithm;
     Generation currentGeneration;
@@ -13,6 +14,7 @@ public class AIManager : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = timeScale;
         geneticAlgorithm = new GeneticAlgorithm();
         var startGeneration = new Generation();
         startGeneration.InitRandom(carsCount);
@@ -60,6 +62,7 @@ public class AIManager : MonoBehaviour
         if (Time.time > runStartTime + maxRunTime)
         {
             EvaluateCars();
+            GetComponent<LearningStats>().UpdateStats(currentGeneration);
             var nextGeneration = geneticAlgorithm.GetNextGeneration(currentGeneration);
             StartNewRun(nextGeneration);
         }
