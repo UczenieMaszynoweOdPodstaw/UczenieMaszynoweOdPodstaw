@@ -102,10 +102,20 @@ public class GeneticAlgorithm
     void MutateModel(SteeringModel model)
     {
         var nodes = model.Network.HiddenLayer.Concat(model.Network.OutputLayer).ToArray();
-        var nodeToMutate = nodes[Random.Range(0, nodes.Length)];
+        var mutations = Random.Range(1, 6);
 
-        var mutationStrenght = Random.Range(MIN_MUTATION_STRENGHT, MAX_MUTATION_STRENGHT);
-        nodeToMutate.Weights[Random.Range(0, nodeToMutate.Weights.Length)] *= mutationStrenght;
+        for (int i = 0; i < mutations; i++)
+        {
+            var nodeToMutate = nodes[Random.Range(0, nodes.Length)];
+            var mutationStrenght = Random.Range(MIN_MUTATION_STRENGHT, MAX_MUTATION_STRENGHT);
+            var weightIndex = Random.Range(0, nodeToMutate.Weights.Length);
+            nodeToMutate.Weights[weightIndex] *= mutationStrenght;
+            nodeToMutate.Weights[weightIndex] += Random.Range(-0.1f, 0.1f);
+            if (Random.value < 0.3f)
+            {
+                nodeToMutate.Weights[weightIndex] *= -1;
+            }
+        }
     }
 
     T GetCopy<T>(T obj)
