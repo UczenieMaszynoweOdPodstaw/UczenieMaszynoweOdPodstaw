@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AIManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class AIManager : MonoBehaviour
     [SerializeField] AICar carPrefab;
     [SerializeField] float maxRunTime;
     [SerializeField] float timeScale;
+    [SerializeField] bool startWithBestModelEver;
     List<AICar> aiCars;
     GeneticAlgorithm geneticAlgorithm;
     Generation currentGeneration;
@@ -18,6 +20,11 @@ public class AIManager : MonoBehaviour
         geneticAlgorithm = new GeneticAlgorithm();
         var startGeneration = new Generation();
         startGeneration.InitRandom(carsCount);
+        if (startWithBestModelEver && FileManager.ReadModelFromJsonFile() != null)
+        {
+            startGeneration.SteeringModels.Remove(startGeneration.SteeringModels.Last());
+            startGeneration.SteeringModels.Add(FileManager.ReadModelFromJsonFile());
+        }
         InitAICars();
         StartNewRun(startGeneration);
     }
@@ -62,6 +69,7 @@ public class AIManager : MonoBehaviour
         if (Time.time > runStartTime + maxRunTime)
         {
             EvaluateCars();
+            TrySaveBestModelEver();
             GetComponent<LearningStats>().UpdateStats(currentGeneration);
             var nextGeneration = geneticAlgorithm.GetNextGeneration(currentGeneration);
             StartNewRun(nextGeneration);
@@ -73,6 +81,17 @@ public class AIManager : MonoBehaviour
         foreach (var car in aiCars)
         {
             car.SteeringModel.Reward = car.GetComponent<RewardCalculator>().CalculateReward();
+        }
+    }
+
+    void TrySaveBestModelEver()
+    {
+        var bestModelEver = FileManager.ReadModelFromJsonFile();
+        var bestModelFromCurrentGen = currentGeneration.SteeringModels.OrderByDescending(sm => sm.Reward).ToList().First();
+        if (bestModelEver == null || bestModelFromCurrentGen.Reward > bestModelEver.Reward)
+        {
+            FileManager.SaveModelToJsonFile(bestModelFromCurrentGen);
+            Debug.Log("New best model ever! Reward: " + bestModelFromCurrentGen.Reward);
         }
     }
 }
