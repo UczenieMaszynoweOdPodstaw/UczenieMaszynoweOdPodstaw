@@ -34,8 +34,8 @@ public class RewardCalculator : MonoBehaviour
 
         //penalty for distance to next checkpoint
         var nextCheckpointNumber = CheckpointsPassed.Keys.Any() ? CheckpointsPassed.Keys.Max() + 1 : 1;
-        var nextCheckpoint = FindObjectsByType<TimeCheckpoint>(FindObjectsSortMode.None).Single(c => c.checkpointNumber == nextCheckpointNumber);
-        var distanceToNextCheckpoint = (nextCheckpoint.transform.position - transform.position).magnitude;
+        var nextCheckpoint = FindObjectsByType<TimeCheckpoint>(FindObjectsSortMode.None).SingleOrDefault(c => c.checkpointNumber == nextCheckpointNumber);
+        var distanceToNextCheckpoint = nextCheckpoint != null ? (nextCheckpoint.transform.position - transform.position).magnitude : 0;
 
         return reward - totalCollisionPenalty - distanceToNextCheckpoint;
     }

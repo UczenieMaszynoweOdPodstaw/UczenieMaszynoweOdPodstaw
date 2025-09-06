@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carsCount: 100
   carPrefab: {fileID: 4980902597181703379, guid: 9d75fa512cc5c744f8d624c95d7163f4, type: 3}
-  maxRunTime: 5
+  maxRunTime: 25
   timeScale: 3
   startWithBestModelEver: 1
 --- !u!4 &1277065714
